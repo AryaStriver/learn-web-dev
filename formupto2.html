@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: none;
+        }
+
+        .head {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 35px;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .home {
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 1.1em;
+            color: #fff;
+            margin-left: 40px;
+        }
+
+        .home::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            bottom: -6px;
+            height: 5px;
+            background: #fff;
+            border-radius: 6px;
+            transform: scaleX(0);
+            transition: transform .5s;
+            left: 0;
+        }
+
+        .home:hover:after {
+            transform: scaleX(1);
+        }
+
+        .Login {
+            font-size: 24px;
+            width: 10%;
+            height: 50px;
+            background: transparent;
+            border: 2px solid white;
+            color: #fff;
+        }
+
+        .lo {
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .lo:hover {
+            color: #fff;
+        }
+
+        .Login:hover {
+            background: blue;
+        }
+
+        /* Modal Styles */
+        #loginmodel {
+            display: none;
+            background: url(lg.avif);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-200px, -180px);
+            width: 300px;
+            padding: 20px;
+        }
+
+        /* Modal Target (show modal) */
+        #loginmodel:target {
+            background-size: cover;
+            height: 50vh;
+            width: 50vh;
+            display: block;
+        }
+
+        /* Corrected input styling */
+        #loginmodel input {
+            width: 100%;
+            margin-bottom: 10px;  /* Keeps space between inputs */
+            padding: 10px;  /* Adjusted padding */
+            border: 2px solid white;
+            color: #fff;
+            background: transparent;
+        }
+
+        #loginmodel form button {
+            width: 100%;
+            padding: 10px;
+            background: #f10f9a;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        /* Close link styling */
+        #loginmodel .close-btn {
+            color: white;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="head">
+        <a href="#" class="logo">logo</a>
+        <a href="#" class="home">Home</a>
+        <a href="#" class="home">Courses</a>
+        <a href="#" class="home">Trend</a>
+        <a href="#" class="home">Contact</a>
+        <button class="Login">
+            <a href="#loginmodel" class="lo">Login</a>
+        </button>
+    </header>
+
+    <!-- Modal for Login -->
+    <div id="loginmodel">
+        <form action="#">
+            <ul>
+                <li><input type="text" placeholder="Enter your email"></li>
+                <li><input class="pwrd" type="password" placeholder="Enter your password"></li>
+                <li><button type="submit">Login</button></li>
+                <li><button class="sign-up" type="button">Sign Up</button></li>
+            </ul>
+        </form>
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+</body>
+</html>
