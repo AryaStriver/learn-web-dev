@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 900;text-transform: uppercase;
+        justify-content: space-between;}
+
+        .body {margin: 0;top: 0;position: fixed;display: flex;}
+
+        .head {top: 0;left: 0;width: 100%;height: 70px;position: fixed;background: grey;border-bottom: solid rgba(1, 1, 240, .9);
+            display: flex;align-items: center;justify-content: space-between;z-index: 10;animation: lightflash 10s infinite;}
+
+        .navig {margin-left: 15vh;display: flex;z-index: 11;}
+
+        .navig a {position: relative;text-decoration: none;margin: 3px;width: 200px;color: cyan;font-weight: 600;font-size: 30px;
+            margin-left: 12vh;display: flex;justify-content: left;}
+
+        .navig a::after {content: '';position: absolute;bottom: -6px;left: 0;width: 100px;height: 5px;border-radius: 6px;background: wheat;
+            transform: scaleX(0);transform-origin: right;transition: transform .5s;}
+
+        .navig a:hover::after {transform: scaleX(1);transform-origin: left;}
+
+        .navig a:active {color: black;}
+
+        @keyframes lightflash {0% {background-color: grey;}20% {background-color: lightcoral;}40% {background-color: red;}
+        50% {background-color: purple;}60% {background-color: green;}90% {background-color: blue;}}
+
+        .grp1 {
+            display: grid;
+            /* grid layout work on both dimension and it help to work with row and coloumn together and space the item automatially where they it get space */
+            grid-template-columns: repeat(2, 1fr);
+            /* Two items per row */
+            gap: 15px;
+            /* Space between items */
+            justify-content: center;
+            /* Center the grid */
+            max-width: 500px;
+            /* Set a max width */
+            margin: auto}
+
+        .grp1 div {transform: translate(0px, 600px);
+            width: 500px;
+            height: 900px;
+            padding: 20px;
+            border: solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <nav class="navig">
+            <a href="">Home</a>
+            <a href="">upcoming</a>
+            <a href="">latest</a>
+            <a href="">Hollywood</a>
+        </nav>
+    </header>
+    <div class="grp1">
+        <div
+            style="background: url(download.jfif) ;background-size: contain;background-origin: border-box; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: #fff; border: 5px solid black;">
+            MUNJYA</div>
+        <div>box4</div>
+        <div>box3</div>
+        <div>box2</div>
+        <div>box1</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+    </div>
+
+</body>
+
+</html>
